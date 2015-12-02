@@ -8,9 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+
 @Entity
 @Table(name = "contatos")
 public class Contato extends Persistable{
