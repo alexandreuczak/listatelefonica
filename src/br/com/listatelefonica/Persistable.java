@@ -14,7 +14,7 @@ public abstract class Persistable implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	//comentario
+	//comentario2
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
