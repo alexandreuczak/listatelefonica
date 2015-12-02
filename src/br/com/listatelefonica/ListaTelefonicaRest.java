@@ -1,10 +1,11 @@
 package br.com.listatelefonica;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -22,11 +23,19 @@ public class ListaTelefonicaRest {
 	@Path("/contatos")
 	@Produces({MediaType.APPLICATION_JSON})
 	public List<Contato>getContatos(){
-		List<Contato> contatos = new ArrayList<Contato>();
+		/*List<Contato> contatos = new ArrayList<Contato>();
 		contatos.add(new Contato("pedro da Silva", "9999-9999", new Date(), OperadorasRepositorio.EMBRATEL));
 		contatos.add(new Contato("ANA MARIA", "9999-9998", new Date(), OperadorasRepositorio.VIVO));
 		contatos.add(new Contato("Maria de jesus", "99999-9991", new Date(), OperadorasRepositorio.OI));
-		return contatos;
+		return contatos;*/
+		return new ContatoDAO().pesquisar();
+	}
+	
+	@POST
+	@Path("/contatos/salvar")
+	@Consumes({MediaType.APPLICATION_JSON})
+	public void salvarContato(Contato contato){		
+		new ContatoDAO().salvar(contato);
 	}
 	
 	@GET
@@ -34,7 +43,6 @@ public class ListaTelefonicaRest {
 	@Produces({MediaType.APPLICATION_JSON})
 	public List<Operadora>getOperadoras(){
 		return new OperadoraDAO().pesquisar();
-		//return OperadorasRepositorio.getOperadoras();
 	}
 	
 }

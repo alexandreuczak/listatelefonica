@@ -20,9 +20,11 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
 		carregarOperadoras();
 		
 		$scope.adicionarContato = function (contato){
-		
+			contato.data = new Date();
 			contato.serial = serialGenerator.generate();
-			$scope.contatos.push(angular.copy(contato));
+			contatosAPI.salvarContato(contato).success(function(){
+				carregarContatos();
+			});
 			delete $scope.contato;
 			$scope.contatoForm.$setPristine();
 		};

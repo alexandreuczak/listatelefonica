@@ -1,3 +1,3 @@
 angular.module("listaTelefonica").config(function(serialGeneratorProvider){
-	serialGeneratorProvider.setLength(3);
+	serialGeneratorProvider.setLength(5);
 });
