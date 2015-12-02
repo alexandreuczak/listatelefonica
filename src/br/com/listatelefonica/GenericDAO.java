@@ -1,7 +1,7 @@
 package br.com.listatelefonica;
-import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.Map;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 

@@ -1,7 +1,4 @@
-package br.com.listatelefonica;import java.util.HashMap;
-import java.util.Map;
-
-import javax.persistence.EntityManagerFactory;
+package br.com.listatelefonica;import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class SessionFactory {
