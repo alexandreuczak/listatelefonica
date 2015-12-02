@@ -2,11 +2,23 @@ package br.com.listatelefonica;
 
 import java.math.BigDecimal;
 
-public class Operadora {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="operadoras")
+public class Operadora extends Persistable{
 	
-	private Integer codigo;
+	private static final long serialVersionUID = 1L;
+
+	@Column(name="nome")
 	private String nome;
+	
+	@Column(name="categoria")
 	private String categoria;
+	
+	@Column(name = "preco")
 	private BigDecimal preco;
 	
 	public Operadora() {

@@ -33,7 +33,8 @@ public class ListaTelefonicaRest {
 	@Path("/operadoras")
 	@Produces({MediaType.APPLICATION_JSON})
 	public List<Operadora>getOperadoras(){
-		return OperadorasRepositorio.getOperadoras();
+		return new OperadoraDAO().pesquisar();
+		//return OperadorasRepositorio.getOperadoras();
 	}
 	
 }
