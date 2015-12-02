@@ -38,6 +38,19 @@ public class ListaTelefonicaRest {
 		new ContatoDAO().salvar(contato);
 	}
 	
+	@POST
+	@Path("/contatos/removar")
+	@Consumes({MediaType.APPLICATION_JSON})
+	public void removerContato(List<Contato> contatos){		
+		ContatoDAO dao = new ContatoDAO();
+		for (Contato contato : contatos) {
+			Contato c = dao.pesquisar(contato.getCodigo());
+			if(c != null){
+				dao.excluir(c);
+			}
+		}
+	}
+	
 	@GET
 	@Path("/operadoras")
 	@Produces({MediaType.APPLICATION_JSON})
