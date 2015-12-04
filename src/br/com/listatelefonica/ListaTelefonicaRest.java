@@ -23,11 +23,6 @@ public class ListaTelefonicaRest {
 	@Path("/contatos")
 	@Produces({MediaType.APPLICATION_JSON})
 	public List<Contato>getContatos(){
-		/*List<Contato> contatos = new ArrayList<Contato>();
-		contatos.add(new Contato("pedro da Silva", "9999-9999", new Date(), OperadorasRepositorio.EMBRATEL));
-		contatos.add(new Contato("ANA MARIA", "9999-9998", new Date(), OperadorasRepositorio.VIVO));
-		contatos.add(new Contato("Maria de jesus", "99999-9991", new Date(), OperadorasRepositorio.OI));
-		return contatos;*/
 		return new ContatoDAO().pesquisar();
 	}
 	
