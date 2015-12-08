@@ -1,4 +1,10 @@
-angular.module("listaTelefonica").directive("uiAccordions", function(){
+angular.module("uiAccordion",[]);
+
+angular.module("uiAccordion").run(function($templateCache){
+	$templateCache.put("view/accordion.html", '<div class="ui-accordion-title" ng-click="open()">{{title}}</div><div class="ui-accordion-content" ng-show="isOpened" ng-transclude></div>');
+});
+
+angular.module("uiAccordion").directive("uiAccordions", function(){
 	return {
 		controller: function($scope, $element, $attrs){
 			var accordions = [];
@@ -14,7 +20,7 @@ angular.module("listaTelefonica").directive("uiAccordions", function(){
 	};
 });
 
-angular.module("listaTelefonica").directive("uiAccordion", function(){
+angular.module("uiAccordion").directive("uiAccordion", function(){
 	return {
 		transclude: true,
 		templateUrl: "view/accordion.html",
