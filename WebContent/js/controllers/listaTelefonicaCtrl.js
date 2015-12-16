@@ -22,7 +22,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
 		carregarOperadoras();
 		
 		$scope.adicionarContato = function (contato){
-			contato.data = new Date();
+			//contato.data = new Date();
 			contato.serial = serialGenerator.generate();
 			contatosAPI.salvarContato(contato).success(function(){
 				carregarContatos();
