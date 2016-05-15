@@ -16,17 +16,19 @@
 	<script src="js/controllers/listaTelefonicaCtrl.js"></script>	
 	<script src="js/services/contatosAPIService.js"></script>	
 	<script src="js/services/operadorasAPIService.js"></script>	
-	<script src="js/config/serialGeneratorConfig.js"></script>	
+	<script src="js/config/serialGeneratorConfig.js"></script>
+	<script src="js/config/interceptorConfig.js"></script>	
 	<script src="js/value/configValue.js"></script>	
 	<script src="js/filters/nameFilter.js"></script>	
 	<script src="js/filters/ellipsisFilter.js"></script>
 	<script src="js/directives/uiAlertDirective.js"></script>	
-	<script src="js/directives/uiDateAlertDirective.js"></script>		
+	<script src="js/directives/uiDateAlertDirective.js"></script>	
+	<script src="js/interceptors/timestampInterceptor.js"></script>	
 </head>
 <body  ng-controller= "listaTelefonicaCtrl">
 	<div class="jumbotron">
 			
-			<ui-accordions>
+			<ui-accordions ng-if="false">
 				<ui-accordion title="Accordion 1">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</ui-accordion>
