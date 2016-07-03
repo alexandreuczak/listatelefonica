@@ -7,16 +7,18 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/listatelefonica")
 public class ListaTelefonicaRest {
-
 	
-	
-	public Contato get(Integer id){
-		return new Contato("Pedro", "9999-9999", new Date(), OperadorasRepositorio.EMBRATEL);
+	@GET
+	@Path("/contatos/{id}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Contato get(@PathParam("id")Integer id){
+		return new ContatoDAO().pesquisar(id);
 	}
 	
 	@GET
@@ -34,7 +36,7 @@ public class ListaTelefonicaRest {
 	}
 	
 	@POST
-	@Path("/contatos/removar")
+	@Path("/contatos/remover")
 	@Consumes({MediaType.APPLICATION_JSON})
 	public void removerContato(List<Contato> contatos){		
 		ContatoDAO dao = new ContatoDAO();

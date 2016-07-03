@@ -22,3 +22,7 @@
 .negrito{
 	font-weight: bold;
 }
+
+.center{
+	text-align: -webkit-right;
+}
