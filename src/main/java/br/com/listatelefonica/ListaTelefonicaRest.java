@@ -1,6 +1,5 @@
 package br.com.listatelefonica;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
