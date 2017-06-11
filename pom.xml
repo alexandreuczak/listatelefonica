@@ -168,7 +168,6 @@
 						<app>target/${project.artifactId}-${project.version}.war</app>
 						<port>8080</port>
 						<contextRoot>/listatelefonica</contextRoot>
-				
 					</configuration>
 					<dependencies>
 						<dependency>
